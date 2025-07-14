@@ -1,0 +1,13 @@
+<div>
+  <input [(ngModel)]="user" placeholder="Your name" />
+  <input [(ngModel)]="message" (input)="onTyping()" placeholder="Your message" />
+  <button (click)="sendMessage()">Send</button>
+</div>
+
+<p *ngIf="typingNotification">{{ typingNotification }}</p>
+
+<ul>
+  <li *ngFor="let msg of messages">
+    <strong>{{ msg.user }}:</strong> {{ msg.msg }}
+  </li>
+</ul>
