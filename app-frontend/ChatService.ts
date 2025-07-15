@@ -40,8 +40,8 @@ export class ChatService {
         this.hubConnection.invoke('UserTyping', user).catch(err => console.error(err));
     }
 
-    stopConnection(): Promise<void> {
-        return this.hubConnection.stop().catch(err => console.error("Error while stopping connection: ", err))  ;
+    stopConnection(): void {
+        this.hubConnection.stop().catch(err => console.error("Error while stopping connection: ", err))  ;
     }
 }
 
